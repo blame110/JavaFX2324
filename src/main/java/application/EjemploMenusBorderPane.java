@@ -1,8 +1,8 @@
 package application;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -66,11 +66,14 @@ public class EjemploMenusBorderPane extends Application {
 		slider.setMinorTickCount(1);
 		slider.setBlockIncrement(1);
 
-		slider.setOnDragDone(new EventHandler<ActionEvent>() {
+		// Cuando el slider cambia de valor en lugar de
+		// un EventHandler,
+		// Se utiliza un Listener
+		slider.valueProperty().addListener(new ChangeListener<Number>() {
+			public void changed(ObservableValue<? extends Number> ov, Number old_val, Number new_val) {
 
-			@Override
-			public void handle(ActionEvent event) {
-				lblValorNota.setText(Double.toString(slider.getValue()));
+				lblValorNota.setText(new_val.toString());
+
 			}
 		});
 
