@@ -5,5 +5,5 @@ module org.openjfx.javafx_archetype_simple {
 	requires javafx.graphics;
 	requires javafx.base;
 
-	exports application;
+	exports app;
 }
