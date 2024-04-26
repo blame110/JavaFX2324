@@ -16,6 +16,7 @@ public class PanelFormulario extends GridPane {
 	public TextField txtTema;
 	public ChoiceBox chbCat;
 	public TextArea txtObs;
+	public Button btnAceptar;
 
 	/**
 	 * Constructor principal de la clase Dentro vamos a
@@ -27,7 +28,7 @@ public class PanelFormulario extends GridPane {
 		Label lblTema = new Label("Tema");
 		Label lblCategoria = new Label("Categoría");
 		Label lblObservaciones = new Label("Observaciones");
-		Button btnAceptar = new Button("Aceptar");
+		btnAceptar = new Button("Aceptar");
 
 		// Creamos los controles
 		txtEmail = new TextField();
